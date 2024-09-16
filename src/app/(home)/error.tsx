@@ -14,8 +14,9 @@ export default function error({ error, reset }: ErrorProps) {
 
     return (
         <div className={styles.error}>
-            <p>
-                <strong>:'(</strong> Opps! Something went wrong <button onClick={reset}>Retry</button>
+            <p className={styles.error__text}>
+                <strong>:'(</strong> Opps! Something went wrong
+                <button className={styles.error__button} onClick={reset}>Retry</button>
             </p>
         </div>
     )
