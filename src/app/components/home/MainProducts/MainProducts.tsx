@@ -1,8 +1,9 @@
+"use client"
 export const MainProducts = () => {
-    return (
-      <section>
-        <h1>MainProducts</h1>
-      </section>
-    )
-  }
-  
+  console.log(process.env.NEXT_PUBLIC_SHOPIFY_HOST_NAME)
+  return (
+    <section>
+      <h1>MainProducts</h1>
+    </section>
+  )
+}
