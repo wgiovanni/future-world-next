@@ -19,9 +19,6 @@ export default async function category(props: CategoryProps) {
   }else {
     products = await getProducts()
   }
-
-  console.log('products', products)
-
   return (
     <ProductsWrapper products={products} />
   )
