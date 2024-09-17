@@ -40,9 +40,9 @@ export const getMainProducts = async () => {
       }),
       cache: 'force-cache',
       // cache: 'no-cache'
-      next: {
-        tags: ['main-products']
-      }
+      // next: {
+      //   tags: ['main-products']
+      // }
     });
     const { products } = await response.json();
 
