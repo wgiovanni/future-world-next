@@ -19,5 +19,7 @@ export const createAcessToken = async (email: string, password: string) => {
             httpOnly: true,
             sameSite: "strict"
         });
+
+        return accessToken;
     }
 }
