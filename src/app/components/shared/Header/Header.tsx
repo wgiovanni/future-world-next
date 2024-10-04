@@ -1,10 +1,12 @@
 import Link from 'next/link'
-import ShoppingCart from './../ShoppingCart'
+// import ShoppingCart from './../ShoppingCart'
 import { validateAccessToken } from '../../../../utils/auth/validateAccessToken'
 import styles from './Header.module.sass'
 import dynamic from 'next/dynamic'
+import { Logout } from '../../logout'
+// import { useState } from 'react'
 
-const NoSSRShoppingCart = dynamic(() => import('../ShoppingCart'), {ssr: false})
+const NoSSRShoppingCart = dynamic(() => import('../ShoppingCart'), { ssr: false })
 
 export const Header = async () => {
   const customer = await validateAccessToken();
@@ -25,7 +27,7 @@ export const Header = async () => {
         </ul>
       </nav>
       <div className={styles.Header__user}>
-        {customer?.firstName ? (<p>Hola {customer.firstName}!</p>) : (<Link href="/login">Login</Link>)}
+        {customer?.firstName ? (<Logout customer={customer}/>) : (<Link href="/login">Login</Link>)}
         <NoSSRShoppingCart />
       </div>
     </header>)

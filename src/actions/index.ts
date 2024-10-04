@@ -49,6 +49,12 @@ export const handleLogin = async (formData: FormData) => {
   }
 };
 
+export const handleLogout = async () => {
+  const cookiesStore = cookies();
+  cookiesStore.delete('accessToken');
+  redirect("/store");
+};
+
 export const handleCreateCart = async (items: CartItem[]) => {
   const cookiesStore = cookies();
   const accesToken = cookiesStore.get("accessToken")?.value as string;
