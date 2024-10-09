@@ -1,9 +1,10 @@
 "use client"
 import { useState } from "react"
-import styles from './Logout.module.sass'
+import styles from './Dropdown.module.sass'
 import { handleLogout } from "../../../actions";
+import Link from "next/link";
 
-export const Logout = ({ customer }: any) => {
+export const Dropdown = ({ customer }: any) => {
 
     const [isOpen, setIsOpen] = useState(false);
     const handleOpen = () => {
@@ -17,13 +18,14 @@ export const Logout = ({ customer }: any) => {
     }
 
     return (
-        <div className={styles.Logout}>
-            <button onClick={handleOpen} className={styles.Logout__user}>
+        <div className={styles.Dropdown}>
+            <button onClick={handleOpen} className={styles.Dropdown__user}>
                 <p>Hola {customer.firstName}!</p>
             </button>
             {isOpen && (
-                <div className={styles.Logout__dropdown}>
-                    <button onClick={handleLogoutButton} className={styles.Logout__logoutButton}>
+                <div className={styles.Dropdown__dropdown}>
+                    <Link href="/my-account" className={styles.Dropdown__dropdownLink}>My account</Link>
+                    <button onClick={handleLogoutButton} className={styles.Dropdown__dropdownButton}>
                         Logout
                     </button>
                 </div>

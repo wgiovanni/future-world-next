@@ -1,4 +1,4 @@
-.Logout
+.Dropdown
     position: relative
     &__user
         color: $text-color
@@ -17,10 +17,10 @@
         border: 1px solid $border-color
         border-radius: 8px
         right: 0
-        min-width: 110px
+        min-width: 150px
         padding: 1rem
         z-index: 2
-    &__logoutButton
+    &__dropdownButton
         background: $main-contrast
         color: $text-color
         width: 100%
@@ -32,3 +32,19 @@
         &:disabled
         color: $text-color
         border: 1px solid $border-color
+    &__dropdownLink
+        background: $main-contrast
+        color: $text-color
+        width: 100%
+        padding: 0.5rem
+        border-radius: 8px
+        border: none
+        font-weight: bold
+        cursor: pointer
+        &:disabled
+        color: $text-color
+        border: 1px solid $border-color
+        text-decoration: none
+        text-align: center
+        font-size: 0.9rem
+        max-width: 131px
